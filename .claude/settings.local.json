@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\).filter\\(k => !k.startsWith\\('Lucide'\\) && !k.endsWith\\('Icon'\\)\\); console.log\\(keys.slice\\(0,20\\)\\);\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('circle'\\) && !k.startsWith\\('Lucide'\\) && !k.endsWith\\('Icon'\\)\\).slice\\(0,15\\); console.log\\(keys\\);\")"
+    ]
+  }
+}
