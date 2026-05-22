@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef } from "react";
 import Link from "next/link";
@@ -29,12 +29,12 @@ export function Navbar() {
   const isActiveSolutions = pathname.startsWith("/solutions");
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-white/10">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
 
           <Link href="/" className="flex-shrink-0">
-            <Logo variant="light" />
+            <Logo variant="dark" />
           </Link>
 
           {/* Desktop nav */}
@@ -50,10 +50,10 @@ export function Navbar() {
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[16px] font-medium transition-colors duration-200 py-2 relative group ${
+                      className={`flex items-center gap-1 text-[18px] font-medium transition-colors duration-200 py-2 relative group ${
                         isActiveSolutions
-                          ? "text-[#2563EB]"
-                          : "text-[#1A1A2E]/75 hover:text-[#1A1A2E]"
+                          ? "text-white"
+                          : "text-white/75 hover:text-white"
                       }`}
                     >
                       {link.label}
@@ -82,7 +82,7 @@ export function Navbar() {
                             <Link
                               key={s.href}
                               href={s.href}
-                              className={`block px-5 py-2.5 text-[16px] font-medium transition-colors hover:bg-[#F4F4F2] hover:text-[#2563EB] ${
+                              className={`block px-5 py-2.5 text-[18px] font-medium transition-colors hover:bg-[#F4F4F2] hover:text-[#2563EB] ${
                                 pathname === s.href
                                   ? "text-[#2563EB] bg-blue-50/60"
                                   : "text-[#1A1A2E]"
@@ -103,10 +103,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-[16px] font-medium transition-colors duration-200 py-2 group ${
+                  className={`relative text-[18px] font-medium transition-colors duration-200 py-2 group ${
                     isActive
-                      ? "text-[#2563EB]"
-                      : "text-[#1A1A2E]/75 hover:text-[#1A1A2E]"
+                      ? "text-white"
+                      : "text-white/75 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -122,7 +122,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-[#1A1A2E]"
+            className="md:hidden p-2 text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -139,7 +139,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-transparent backdrop-blur-sm border-t border-white/10 overflow-hidden"
           >
             <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-1">
               {[
@@ -154,7 +154,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-[18px] font-medium transition-colors ${
                     pathname === link.href
                       ? "text-[#2563EB] bg-blue-50"
                       : "text-[#1A1A2E] hover:bg-gray-50"

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -52,7 +52,7 @@ export function SolutionsOverview() {
             </h2>
           </AnimateOnScroll>
           <AnimateOnScroll delay={0.2}>
-            <p className="text-[#6B7280] text-[16px] leading-relaxed max-w-[260px] md:text-right">
+            <p className="text-[#6B7280] text-[18px] leading-relaxed max-w-[260px] md:text-right">
               From intelligent automation to human-centric interfaces, we build
               solutions that solve real business problems.
             </p>
@@ -93,12 +93,12 @@ export function SolutionsOverview() {
                     <h3 className="text-white font-bold text-[20px] leading-[1.2] mb-3 whitespace-pre-line">
                       {card.title}
                     </h3>
-                    <p className="text-white/45 text-[16px] leading-[1.65] flex-1 mb-6">
+                    <p className="text-white/45 text-[18px] leading-[1.65] flex-1 mb-6">
                       {card.description}
                     </p>
                     <Link
                       href={card.href}
-                      className="inline-flex items-center gap-1.5 text-white/60 text-[16px] font-medium hover:text-white transition-colors duration-200 group/link"
+                      className="inline-flex items-center gap-1.5 text-white/60 text-[18px] font-medium hover:text-white transition-colors duration-200 group/link"
                     >
                       Learn more
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />

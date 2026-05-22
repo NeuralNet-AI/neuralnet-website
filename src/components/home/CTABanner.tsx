@@ -1,4 +1,4 @@
-import { AnimateOnScroll } from "@/components/shared/AnimateOnScroll";
+﻿import { AnimateOnScroll } from "@/components/shared/AnimateOnScroll";
 import { PrimaryButton } from "@/components/shared/PrimaryButton";
 
 export function CTABanner() {
@@ -8,7 +8,7 @@ export function CTABanner() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <AnimateOnScroll>
-              <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-3">
+              <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-3">
                 Ready to transform your operations?
               </p>
             </AnimateOnScroll>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Mail, MapPin, Headphones } from "lucide-react";
 import { AnimateOnScroll } from "@/components/shared/AnimateOnScroll";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -24,7 +24,7 @@ export default function ContactPage() {
             <AnimateOnScroll>
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB]">
+                <span className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB]">
                   Get in Touch
                 </span>
               </div>
@@ -39,7 +39,7 @@ export default function ContactPage() {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={0.2}>
-              <p className="text-[#6B7280] text-[16px] leading-relaxed mb-6 max-w-md">
+              <p className="text-[#6B7280] text-[18px] leading-relaxed mb-6 max-w-md">
                 Whether you have a clear roadmap or need help defining the
                 problem, we&apos;re here to listen and build the right system
                 with you.
@@ -58,16 +58,16 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#6B7280] mb-1">
+                    <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#6B7280] mb-1">
                       Direct Communication
                     </p>
                     <a
                       href="mailto:info@neuralnet.uk"
-                      className="text-[#1A1A2E] font-bold text-[16px] hover:text-[#2563EB] transition-colors"
+                      className="text-[#1A1A2E] font-bold text-[18px] hover:text-[#2563EB] transition-colors"
                     >
                       info@neuralnet.uk
                     </a>
-                    <p className="text-[#9CA3AF] text-[16px] font-medium tracking-wider uppercase mt-0.5">
+                    <p className="text-[#9CA3AF] text-[18px] font-medium tracking-wider uppercase mt-0.5">
                       United Kingdom
                     </p>
                   </div>
@@ -80,15 +80,15 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#6B7280] mb-1">
+                    <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#6B7280] mb-1">
                       Contact Address
                     </p>
-                    <p className="text-[#1A1A2E] font-bold text-[16px]">
+                    <p className="text-[#1A1A2E] font-bold text-[18px]">
                       101 New Cavendish St,
                       <br />
                       London W1W 6XH
                     </p>
-                    <p className="text-[#9CA3AF] text-[16px] font-medium tracking-wider uppercase mt-0.5">
+                    <p className="text-[#9CA3AF] text-[18px] font-medium tracking-wider uppercase mt-0.5">
                       United Kingdom
                     </p>
                   </div>
@@ -103,10 +103,10 @@ export default function ContactPage() {
               <Headphones className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
-              <p className="text-white font-bold text-[16px]">
+              <p className="text-white font-bold text-[18px]">
                 Prefer a conversation?
               </p>
-              <p className="text-white/50 text-[16px]">
+              <p className="text-white/50 text-[18px]">
                 Let&apos;s talk through your challenges.
               </p>
             </div>

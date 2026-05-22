@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import {
   Phone,
   GitBranch,
@@ -108,89 +108,54 @@ export default function AiVoiceAgentsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#F4F4F2] pt-32 pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <AnimateOnScroll>
-                <SectionLabel text="AI Voice Agents" dot className="mb-6" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-[58px] font-black leading-[1.05] mb-6">
-                  <span className="text-[#1A1A2E] block">
-                    EVERY CALL HANDLED.
-                  </span>
-                  <span className="text-[#2563EB] block">
-                    EVERY SINGLE TIME.
-                  </span>
-                </h1>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.2}>
-                <p className="text-[#6B7280] text-[16px] leading-relaxed mb-8">
-                  Conversational AI systems that manage inbound and outbound
-                  call experiences across support, sales, and operations — with
-                  the reliability and consistency your team needs to scale.
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.3}>
-                <PrimaryButton
-                  href="/contact"
-                  label="Request a voice agent demo"
-                  variant="light"
-                />
-              </AnimateOnScroll>
-            </div>
+      <section className="relative bg-black overflow-hidden min-h-screen flex items-center">
+        {/* Full-width background video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/voice-hero-video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+        </div>
 
-            {/* Right: hero image + floating card */}
-            <AnimateOnScroll delay={0.2} className="relative">
-              <div className="relative h-72 lg:h-[420px] rounded-xl overflow-hidden">
-                <Image
-                  src="/voice-hero.png"
-                  alt="AI Voice Agents"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Floating card */}
-              <div className="absolute -bottom-6 -left-4 bg-white rounded-xl shadow-xl p-4 border border-gray-100 w-56">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-[#1A1A2E] text-[16px] font-semibold">
-                    AI Voice Agent
-                  </span>
-                </div>
-                <AnimatedWaveform bars={10} color="#2563EB" height={24} className="mb-3" />
-                <div className="grid grid-cols-3 gap-1 text-center">
-                  {[
-                    { label: "Duration", value: "12:46" },
-                    { label: "Status", value: "In Call" },
-                    { label: "Sentiment", value: "Positive" },
-                  ].map((m) => (
-                    <div key={m.label}>
-                      <p className="text-[#6B7280] text-[9px] uppercase tracking-wide leading-tight">
-                        {m.label}
-                      </p>
-                      <p className="text-[#1A1A2E] text-[11px] font-semibold">
-                        {m.value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-40 text-center">
+          <AnimateOnScroll delay={0.1}>
+            <h1 className="text-4xl md:text-5xl lg:text-[58px] font-black leading-[1.05] mb-6 text-white">
+              EVERY CALL HANDLED.<br />EVERY SINGLE TIME.
+            </h1>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.2}>
+            <p className="text-white/70 text-[18px] leading-relaxed mb-8 max-w-[520px] mx-auto">
+              Conversational AI systems that manage inbound and outbound
+              call experiences across support, sales, and operations — with
+              the reliability and consistency your team needs to scale.
+            </p>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.3}>
+            <PrimaryButton
+              href="/contact"
+              label="Request a voice agent demo"
+              variant="dark"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* SOLUTION CAPABILITIES */}
-      <section className="bg-white">
+      <section className="bg-[#F4F4F2]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-24">
           <div className="flex flex-col md:flex-row justify-between gap-8 mb-14">
             <AnimateOnScroll>
               <SectionLabel text="Solution Capabilities" />
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.1} className="max-w-xs md:text-right">
-              <p className="text-[#6B7280] text-[16px] leading-relaxed">
+              <p className="text-[#6B7280] text-[18px] leading-relaxed">
                 An end-to-end voice AI platform purpose-built for conversational
                 excellence and operational performance at scale.
               </p>
@@ -203,18 +168,15 @@ export default function AiVoiceAgentsPage() {
               return (
                 <AnimateOnScroll key={cap.num} delay={i * 0.08}>
                   <div className="bg-white p-8 relative">
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="mb-4">
                       <div className="w-10 h-10 bg-[#F4F4F2] rounded-lg flex items-center justify-center">
                         <Icon className="w-5 h-5 text-[#2563EB]" />
                       </div>
-                      <span className="text-[#E5E7EB] text-3xl font-black">
-                        {cap.num}
-                      </span>
                     </div>
-                    <h3 className="text-[#1A1A2E] text-[16px] font-bold tracking-wider mb-2">
+                    <h3 className="text-[#1A1A2E] text-[18px] font-bold tracking-wider mb-2">
                       {cap.title}
                     </h3>
-                    <p className="text-[#6B7280] text-[16px] leading-relaxed">
+                    <p className="text-[#6B7280] text-[18px] leading-relaxed">
                       {cap.desc}
                     </p>
                   </div>
@@ -249,10 +211,10 @@ export default function AiVoiceAgentsPage() {
                           <Icon className="w-4 h-4 text-white/70" />
                         </div>
                         <div>
-                          <p className="text-white/70 text-[16px] font-semibold tracking-wider leading-tight mb-1">
+                          <p className="text-white/70 text-[18px] font-semibold tracking-wider leading-tight mb-1">
                             {uc.title}
                           </p>
-                          <p className="text-white/40 text-[16px] leading-relaxed">
+                          <p className="text-white/40 text-[18px] leading-relaxed">
                             {uc.desc}
                           </p>
                         </div>
@@ -288,7 +250,7 @@ export default function AiVoiceAgentsPage() {
                   {chatMessages.map((msg, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div
-                        className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-[16px] font-bold ${
+                        className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-[18px] font-bold ${
                           msg.role === "agent"
                             ? "bg-[#2563EB] text-white"
                             : "bg-gray-600 text-white"
@@ -297,14 +259,14 @@ export default function AiVoiceAgentsPage() {
                         {msg.role === "agent" ? "A" : "C"}
                       </div>
                       <div className="flex-1">
-                        <p className="text-[#6B7280] text-[16px] font-medium mb-0.5">
+                        <p className="text-[#6B7280] text-[18px] font-medium mb-0.5">
                           {msg.role === "agent" ? "AI Agent" : "Customer"}
                         </p>
-                        <p className="text-white/80 text-[16px] leading-relaxed">
+                        <p className="text-white/80 text-[18px] leading-relaxed">
                           {msg.text}
                         </p>
                       </div>
-                      <span className="text-white/30 text-[16px] flex-shrink-0">
+                      <span className="text-white/30 text-[18px] flex-shrink-0">
                         {msg.time}
                       </span>
                     </div>
@@ -315,10 +277,10 @@ export default function AiVoiceAgentsPage() {
                 <div className="border-t border-white/10 pt-4 grid grid-cols-3 gap-4">
                   <div className="flex items-center gap-1.5">
                     <div>
-                      <p className="text-white/30 text-[16px] uppercase tracking-wider">
+                      <p className="text-white/30 text-[18px] uppercase tracking-wider">
                         Sentiment
                       </p>
-                      <p className="text-green-400 text-[16px] font-semibold">
+                      <p className="text-green-400 text-[18px] font-semibold">
                         Positive
                       </p>
                     </div>
@@ -326,20 +288,20 @@ export default function AiVoiceAgentsPage() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div>
-                      <p className="text-white/30 text-[16px] uppercase tracking-wider">
+                      <p className="text-white/30 text-[18px] uppercase tracking-wider">
                         Confidence
                       </p>
-                      <p className="text-green-400 text-[16px] font-semibold">
+                      <p className="text-green-400 text-[18px] font-semibold">
                         98%
                       </p>
                     </div>
                     <span className="w-2 h-2 rounded-full bg-green-400" />
                   </div>
                   <div>
-                    <p className="text-white/30 text-[16px] uppercase tracking-wider">
+                    <p className="text-white/30 text-[18px] uppercase tracking-wider">
                       Resolution
                     </p>
-                    <p className="text-white/70 text-[16px] font-semibold">
+                    <p className="text-white/70 text-[18px] font-semibold">
                       In Progress
                     </p>
                   </div>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Logo } from "@/components/shared/Logo";
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
+            <h4 className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -66,12 +66,12 @@ export function Footer() {
 
           {/* Col 3: Contact */}
           <div>
-            <h4 className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
+            <h4 className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
               Contact
             </h4>
             <div className="space-y-4">
               <div>
-                <p className="text-white/40 text-[16px] uppercase tracking-wider mb-1">
+                <p className="text-white/40 text-[18px] uppercase tracking-wider mb-1">
                   Email
                 </p>
                 <a
@@ -82,7 +82,7 @@ export function Footer() {
                 </a>
               </div>
               <div>
-                <p className="text-white/40 text-[16px] uppercase tracking-wider mb-1">
+                <p className="text-white/40 text-[18px] uppercase tracking-wider mb-1">
                   Address
                 </p>
                 <p className="text-white/80 text-base leading-relaxed">
@@ -96,7 +96,7 @@ export function Footer() {
 
           {/* Col 4: Social */}
           <div>
-            <h4 className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
+            <h4 className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-5">
               Social
             </h4>
             <div className="flex items-center gap-3">
@@ -127,7 +127,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white/40 text-base">
-            © NeuralNet Ltd. All rights reserved. 2026
+            Â© NeuralNet Ltd. All rights reserved. 2026
           </p>
           <div className="flex items-center gap-6">
             <Link

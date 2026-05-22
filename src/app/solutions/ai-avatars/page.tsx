@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import {
   GraduationCap,
   FileText,
@@ -62,53 +62,43 @@ export default function AiAvatarsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#F4F4F2] pt-32 pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <AnimateOnScroll>
-                <SectionLabel text="AI Avatar Solutions" dot className="mb-6" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-[58px] font-black leading-[1.05] mb-6">
-                  <span className="text-[#1A1A2E] block">YOUR BRAND.</span>
-                  <span className="text-[#1A1A2E] block">
-                    A CONSISTENT PRESENCE.
-                  </span>
-                  <span className="text-[#6B7280] block">
-                    DEPLOYED AT SCALE.
-                  </span>
-                </h1>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.15}>
-                <div className="w-10 h-0.5 bg-[#2563EB] mb-6" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.2}>
-                <p className="text-[#6B7280] text-[16px] leading-relaxed mb-8">
-                  Two avatar solutions, built for different jobs. One for content
-                  that needs to be produced and distributed. One for interactions
-                  that need to happen in real time.
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.3}>
-                <PrimaryButton
-                  href="/contact"
-                  label="Request an avatar demo"
-                  variant="light"
-                />
-              </AnimateOnScroll>
-            </div>
-            <AnimateOnScroll delay={0.2} className="relative">
-              <div className="relative h-72 lg:h-[440px] rounded-xl overflow-hidden">
-                <Image
-                  src="/avatars-hero.png"
-                  alt="AI Avatar Solutions"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </AnimateOnScroll>
-          </div>
+      <section className="relative bg-black overflow-hidden min-h-screen flex items-center">
+        {/* Full-width background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/avatars-hero.png"
+            alt="AI Avatar Solutions"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-40 text-center">
+          <AnimateOnScroll delay={0.1}>
+            <h1 className="text-4xl md:text-5xl lg:text-[58px] font-black leading-[1.05] mb-6 text-white">
+              YOUR BRAND.<br />A CONSISTENT PRESENCE.<br />DEPLOYED AT SCALE.
+            </h1>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.15}>
+            <div className="w-10 h-0.5 bg-[#2563EB] mb-6 mx-auto" />
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.2}>
+            <p className="text-white/70 text-[18px] leading-relaxed mb-8 max-w-[520px] mx-auto">
+              Two avatar solutions, built for different jobs. One for content
+              that needs to be produced and distributed. One for interactions
+              that need to happen in real time.
+            </p>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.3}>
+            <PrimaryButton
+              href="/contact"
+              label="Request an avatar demo"
+              variant="dark"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -127,7 +117,7 @@ export default function AiAvatarsPage() {
               </AnimateOnScroll>
             </div>
             <AnimateOnScroll delay={0.2} className="max-w-xs md:text-right">
-              <p className="text-[#6B7280] text-[16px] leading-relaxed">
+              <p className="text-[#6B7280] text-[18px] leading-relaxed">
                 Photorealistic AI avatars for video content — training
                 programmes, marketing materials, and internal communications.
               </p>
@@ -147,7 +137,7 @@ export default function AiAvatarsPage() {
                         fill
                         className="object-cover opacity-70"
                       />
-                      <div className="absolute top-3 left-3 text-[#2563EB] text-[16px] font-bold">
+                      <div className="absolute top-3 left-3 text-[#2563EB] text-[18px] font-bold">
                         {item.num}
                       </div>
                       <div className="absolute top-3 right-3 w-7 h-7 bg-[#1E3A5F] rounded-md flex items-center justify-center">
@@ -155,7 +145,7 @@ export default function AiAvatarsPage() {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p className="text-white/70 text-[16px] font-semibold tracking-wider leading-tight">
+                      <p className="text-white/70 text-[18px] font-semibold tracking-wider leading-tight">
                         {item.label}
                       </p>
                     </div>
@@ -182,14 +172,14 @@ export default function AiAvatarsPage() {
                 </h2>
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.2}>
-                <p className="text-white/50 text-[16px] leading-relaxed mb-8">
+                <p className="text-white/50 text-[18px] leading-relaxed mb-8">
                   Live, conversational AI avatars that interact with users in
                   real time. They hold conversations, answer questions, qualify
                   leads, and handle front-desk interactions.
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.25}>
-                <p className="text-white/30 text-[16px] font-semibold tracking-widest uppercase mb-4">
+                <p className="text-white/30 text-[18px] font-semibold tracking-widest uppercase mb-4">
                   Use cases — Popular but not limited to —
                 </p>
               </AnimateOnScroll>
@@ -202,7 +192,7 @@ export default function AiAvatarsPage() {
                         <div className="w-7 h-7 bg-[#1E3A5F] rounded-md flex items-center justify-center flex-shrink-0">
                           <Icon className="w-3.5 h-3.5 text-white/70" />
                         </div>
-                        <p className="text-white/60 text-[16px] font-semibold tracking-wider leading-tight">
+                        <p className="text-white/60 text-[18px] font-semibold tracking-wider leading-tight">
                           {uc.label}
                         </p>
                       </div>
@@ -229,7 +219,7 @@ export default function AiAvatarsPage() {
 
                 {/* Chat bubble */}
                 <div className="bg-[#1E3A5F] rounded-xl p-4 mb-5 text-center">
-                  <p className="text-white text-[16px] font-medium">
+                  <p className="text-white text-[18px] font-medium">
                     How can I help you today?
                   </p>
                   <div className="flex justify-center mt-3">
@@ -239,26 +229,26 @@ export default function AiAvatarsPage() {
 
                 {/* Infrastructure info */}
                 <div>
-                  <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
+                  <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
                     Infrastructure
                   </p>
-                  <p className="text-white/50 text-[16px] leading-relaxed mb-4">
+                  <p className="text-white/50 text-[18px] leading-relaxed mb-4">
                     Voice synthesis, lip sync, and conversational AI are
                     integrated into a single deployable system. Custom avatar
                     creation uses defined brand personas.
                   </p>
                   <div className="flex gap-6 border-t border-white/10 pt-4">
                     <div>
-                      <p className="text-white/30 text-[16px] uppercase tracking-wider mb-1">
+                      <p className="text-white/30 text-[18px] uppercase tracking-wider mb-1">
                         Deployment Ready
                       </p>
                       <div className="w-2 h-2 rounded-full bg-green-400" />
                     </div>
                     <div>
-                      <p className="text-white/30 text-[16px] uppercase tracking-wider mb-1">
+                      <p className="text-white/30 text-[18px] uppercase tracking-wider mb-1">
                         Latency
                       </p>
-                      <p className="text-white/70 text-[16px] font-semibold">
+                      <p className="text-white/70 text-[18px] font-semibold">
                         ~200MS
                       </p>
                     </div>

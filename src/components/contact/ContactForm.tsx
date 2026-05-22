@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronDown, Search } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-/* ─── Country data ─── */
+/* â”€â”€â”€ Country data â”€â”€â”€ */
 interface Country {
   flag: string;
   name: string;
@@ -201,14 +201,14 @@ const COUNTRIES: Country[] = [
   { flag: "🇻🇺", name: "Vanuatu", dial: "+678" },
 ];
 
-/* ─── Form types ─── */
+/* â”€â”€â”€ Form types â”€â”€â”€ */
 const interests = [
   "How could I use AI to benefit my business",
   "I have a specific project or use case I would like to discuss",
   "How would an AI solution integrate and coexist within my existing environment safely",
   "I would like to understand how to build or enhance my AI Strategy",
-  "Manage & Ensure ROI from AI Project Lifecycles – Should AI models be managed as an Asset?",
-  "Data Management Solutions – Ensuring your Data is ready for AI",
+  "Manage & Ensure ROI from AI Project Lifecycles â€“ Should AI models be managed as an Asset?",
+  "Data Management Solutions â€“ Ensuring your Data is ready for AI",
   "AI Model Hosting Solutions",
   "AI Agents",
   "Full-Stack Cybersecurity Solutions (End-to-End Protection)",
@@ -237,7 +237,7 @@ interface Errors {
   recaptcha?: string;
 }
 
-/* ─── Main component ─── */
+/* â”€â”€â”€ Main component â”€â”€â”€ */
 export function ContactForm() {
   const [form, setForm] = useState<FormData>({
     firstName: "",
@@ -333,7 +333,7 @@ export function ContactForm() {
   };
 
   const inputBase =
-    "w-full px-4 py-3 text-[16px] text-[#1A1A2E] bg-white border rounded-lg outline-none transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 placeholder:text-[#9CA3AF]";
+    "w-full px-4 py-3 text-[18px] text-[#1A1A2E] bg-white border rounded-lg outline-none transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 placeholder:text-[#9CA3AF]";
   const errorInput =
     "border-red-400 focus:border-red-500 focus:ring-red-200";
   const normalInput = "border-[#E5E7EB]";
@@ -359,7 +359,7 @@ export function ContactForm() {
         <h3 className="text-2xl font-bold text-[#1A1A2E] mb-3">
           Request Submitted
         </h3>
-        <p className="text-[#6B7280] text-[16px] max-w-xs">
+        <p className="text-[#6B7280] text-[18px] max-w-xs">
           Thank you for reaching out. We&apos;ll be in touch within 24 hours.
         </p>
       </div>
@@ -371,7 +371,7 @@ export function ContactForm() {
       {/* Row 1: First + Last name */}
       <div className="grid grid-cols-2 gap-4">
         <div id="field-firstName">
-          <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+          <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
             01. First Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -386,11 +386,11 @@ export function ContactForm() {
             className={`${inputBase} ${errors.firstName ? errorInput : normalInput}`}
           />
           {errors.firstName && (
-            <p className="text-red-500 text-[16px] mt-1">{errors.firstName}</p>
+            <p className="text-red-500 text-[18px] mt-1">{errors.firstName}</p>
           )}
         </div>
         <div id="field-lastName">
-          <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+          <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
             02. Last Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -405,7 +405,7 @@ export function ContactForm() {
             className={`${inputBase} ${errors.lastName ? errorInput : normalInput}`}
           />
           {errors.lastName && (
-            <p className="text-red-500 text-[16px] mt-1">{errors.lastName}</p>
+            <p className="text-red-500 text-[18px] mt-1">{errors.lastName}</p>
           )}
         </div>
       </div>
@@ -413,7 +413,7 @@ export function ContactForm() {
       {/* Row 2: Email + Phone */}
       <div className="grid grid-cols-2 gap-4">
         <div id="field-email">
-          <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+          <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
             03. Business E-Mail <span className="text-red-500">*</span>
           </label>
           <input
@@ -428,13 +428,13 @@ export function ContactForm() {
             className={`${inputBase} ${errors.email ? errorInput : normalInput}`}
           />
           {errors.email && (
-            <p className="text-red-500 text-[16px] mt-1">{errors.email}</p>
+            <p className="text-red-500 text-[18px] mt-1">{errors.email}</p>
           )}
         </div>
 
         {/* Phone with international dial selector */}
         <div id="field-phone">
-          <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+          <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
             04. Phone Number <span className="text-red-500">*</span>
           </label>
           <div className="relative flex" ref={dialRef}>
@@ -535,14 +535,14 @@ export function ContactForm() {
             )}
           </div>
           {errors.phone && (
-            <p className="text-red-500 text-[16px] mt-1">{errors.phone}</p>
+            <p className="text-red-500 text-[18px] mt-1">{errors.phone}</p>
           )}
         </div>
       </div>
 
       {/* Company */}
       <div>
-        <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+        <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
           05. Company Name
         </label>
         <input
@@ -556,7 +556,7 @@ export function ContactForm() {
 
       {/* Challenge */}
       <div id="field-challenge">
-        <label className="block text-[16px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
+        <label className="block text-[18px] font-semibold tracking-wider text-[#6B7280] uppercase mb-2">
           06. What are you trying to solve?{" "}
           <span className="text-red-500">*</span>
         </label>
@@ -574,7 +574,7 @@ export function ContactForm() {
           }`}
         />
         {errors.challenge && (
-          <p className="text-red-500 text-[16px] mt-1">{errors.challenge}</p>
+          <p className="text-red-500 text-[18px] mt-1">{errors.challenge}</p>
         )}
       </div>
 
@@ -583,7 +583,7 @@ export function ContactForm() {
 
       {/* Interests */}
       <div id="field-interests">
-        <label className="block text-[16px] font-semibold text-[#1A1A2E] mb-4">
+        <label className="block text-[18px] font-semibold text-[#1A1A2E] mb-4">
           What are your main areas of interest?{" "}
           <span className="text-red-500">*</span>
         </label>
@@ -620,7 +620,7 @@ export function ContactForm() {
                   )}
                 </div>
                 <span
-                  className={`text-[16px] leading-relaxed transition-colors ${
+                  className={`text-[18px] leading-relaxed transition-colors ${
                     checked ? "text-[#1A1A2E]" : "text-[#6B7280]"
                   }`}
                   onClick={() => toggleInterest(interest)}
@@ -632,7 +632,7 @@ export function ContactForm() {
           })}
         </div>
         {errors.interests && (
-          <p className="text-red-500 text-[16px] mt-2">{errors.interests}</p>
+          <p className="text-red-500 text-[18px] mt-2">{errors.interests}</p>
         )}
       </div>
 
@@ -649,14 +649,14 @@ export function ContactForm() {
           onExpired={() => setRecaptchaToken(null)}
         />
         {errors.recaptcha && (
-          <p className="text-red-500 text-[16px] mt-1">{errors.recaptcha}</p>
+          <p className="text-red-500 text-[18px] mt-1">{errors.recaptcha}</p>
         )}
       </div>
 
       {/* Submit */}
       <button
         type="submit"
-        className="w-full bg-[#0A1628] text-white py-5 rounded-lg text-[16px] font-semibold tracking-[0.08em] uppercase flex items-center justify-center gap-2 hover:bg-[#0d1f3c] transition-colors duration-200 group"
+        className="w-full bg-[#0A1628] text-white py-5 rounded-lg text-[18px] font-semibold tracking-[0.08em] uppercase flex items-center justify-center gap-2 hover:bg-[#0d1f3c] transition-colors duration-200 group"
       >
         Submit Request
         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />

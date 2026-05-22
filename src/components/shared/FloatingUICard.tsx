@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { AnimatedWaveform } from "./AnimatedWaveform";
 
@@ -55,7 +55,7 @@ export function FloatingUICard({
           {messages.map((msg, i) => (
             <div key={i} className="flex items-start gap-2">
               <div
-                className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[16px] font-bold ${
+                className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[18px] font-bold ${
                   msg.role === "agent"
                     ? "bg-[#2563EB] text-white"
                     : "bg-gray-600 text-white"
@@ -64,9 +64,9 @@ export function FloatingUICard({
                 {msg.role === "agent" ? "A" : "C"}
               </div>
               <div className="flex-1">
-                <p className="text-white/80 text-[16px] leading-relaxed">{msg.text}</p>
+                <p className="text-white/80 text-[18px] leading-relaxed">{msg.text}</p>
               </div>
-              <span className="text-white/30 text-[16px] flex-shrink-0">{msg.time}</span>
+              <span className="text-white/30 text-[18px] flex-shrink-0">{msg.time}</span>
             </div>
           ))}
         </div>
@@ -78,8 +78,8 @@ export function FloatingUICard({
           <div className="flex gap-4 flex-wrap">
             {metrics.map((m, i) => (
               <div key={i} className="flex items-center gap-1">
-                <span className="text-white/40 text-[16px] uppercase tracking-wider">{m.label}:</span>
-                <span className={`text-[16px] font-semibold ${m.positive ? "text-green-400" : "text-white"}`}>
+                <span className="text-white/40 text-[18px] uppercase tracking-wider">{m.label}:</span>
+                <span className={`text-[18px] font-semibold ${m.positive ? "text-green-400" : "text-white"}`}>
                   {m.value}
                 </span>
                 {m.positive !== undefined && (

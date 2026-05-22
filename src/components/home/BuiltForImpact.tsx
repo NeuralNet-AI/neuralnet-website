@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -27,7 +27,7 @@ export function BuiltForImpact() {
                 </h2>
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.2}>
-                <p className="text-white/50 text-[16px] leading-[1.7] mb-10">
+                <p className="text-white/50 text-[18px] leading-[1.7] mb-10">
                   Watch how we turn complexity into clarity and build AI
                   solutions that perform.
                 </p>
@@ -40,7 +40,7 @@ export function BuiltForImpact() {
                   <div className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:border-white group-hover:bg-white/10 flex-shrink-0">
                     <Play className="w-5 h-5 ml-0.5 fill-white stroke-none" />
                   </div>
-                  <span className="text-[16px] font-medium">Play video</span>
+                  <span className="text-[18px] font-medium">Play video</span>
                 </button>
               </AnimateOnScroll>
             </div>

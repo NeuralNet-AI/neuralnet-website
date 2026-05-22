@@ -1,4 +1,4 @@
-import { Maximize2, Aperture, TrendingUp } from "lucide-react";
+﻿import { Maximize2, Aperture, TrendingUp } from "lucide-react";
 import { AnimateOnScroll } from "@/components/shared/AnimateOnScroll";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 
@@ -42,7 +42,7 @@ export function ApproachStrip() {
                   <h3 className="text-white font-semibold text-[17px] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-white/42 text-[16px] leading-[1.7]">
+                  <p className="text-white/42 text-[18px] leading-[1.7]">
                     {item.description}
                   </p>
                 </div>

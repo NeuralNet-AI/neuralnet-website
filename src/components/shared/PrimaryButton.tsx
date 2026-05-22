@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -18,7 +18,7 @@ export function PrimaryButton({
   className = "",
 }: Props) {
   const base =
-    "inline-flex items-center gap-2 rounded-[6px] px-7 py-3.5 text-[16px] font-semibold tracking-[0.05em] transition-all duration-200 group";
+    "inline-flex items-center gap-2 rounded-[6px] px-7 py-3.5 text-[18px] font-semibold tracking-[0.05em] transition-all duration-200 group";
 
   const variants = {
     dark: "bg-white text-[#0A1628] hover:bg-gray-100",

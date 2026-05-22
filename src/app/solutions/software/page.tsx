@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import {
   Code2,
   Layers,
@@ -7,7 +7,6 @@ import {
   Zap,
   Brain,
   Sparkles,
-  ArrowRight,
   Smartphone,
   Cloud,
   GitMerge,
@@ -19,7 +18,6 @@ import {
 import { AnimateOnScroll } from "@/components/shared/AnimateOnScroll";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { PrimaryButton } from "@/components/shared/PrimaryButton";
-import { SharedCTA } from "@/components/shared/SharedCTA";
 
 const capabilities = [
   {
@@ -115,47 +113,42 @@ export default function SoftwarePage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#F4F4F2] pt-32 pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <AnimateOnScroll>
-                <SectionLabel text="Solutions" className="mb-5" />
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.1}>
-                <h1 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-[#1A1A2E] leading-[1.1] mb-6">
-                  Infrastructure built for the way{" "}
-                  <span className="text-[#2563EB]">
-                    business actually works.
-                  </span>
-                </h1>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.2}>
-                <p className="text-[#6B7280] text-[16px] leading-relaxed mb-8">
-                  We design and build custom systems, platforms, and AI
-                  solutions that integrate seamlessly into your operations and
-                  scale with your ambition.
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={0.3}>
-                <PrimaryButton
-                  href="/contact"
-                  label="Let's build your system"
-                  variant="light"
-                />
-              </AnimateOnScroll>
-            </div>
-            <AnimateOnScroll delay={0.2} className="relative">
-              <div className="relative h-72 lg:h-[420px] rounded-xl overflow-hidden">
-                <Image
-                  src="/software-hero.png"
-                  alt="London"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </AnimateOnScroll>
-          </div>
+      <section className="relative bg-black overflow-hidden min-h-screen flex items-center">
+        {/* Full-width background video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/software-hero-video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-40 text-center">
+          <AnimateOnScroll delay={0.1}>
+            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-[1.1] mb-6 max-w-[800px] mx-auto">
+              Infrastructure built for the way business actually works
+            </h1>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.2}>
+            <p className="text-white/70 text-[18px] leading-relaxed mb-8 max-w-[520px] mx-auto">
+              We design and build custom systems, platforms, and AI
+              solutions that integrate seamlessly into your operations and
+              scale with your ambition.
+            </p>
+          </AnimateOnScroll>
+          <AnimateOnScroll delay={0.3}>
+            <PrimaryButton
+              href="/contact"
+              label="Let's build your system"
+              variant="dark"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -174,7 +167,7 @@ export default function SoftwarePage() {
               </AnimateOnScroll>
             </div>
             <AnimateOnScroll delay={0.2} className="max-w-xs">
-              <p className="text-white/50 text-[16px] leading-relaxed">
+              <p className="text-white/50 text-[18px] leading-relaxed">
                 NeuralNet&apos;s software development practice delivers custom
                 software, platforms, APIs, and backend infrastructure that power
                 complex operations.
@@ -189,11 +182,8 @@ export default function SoftwarePage() {
               return (
                 <AnimateOnScroll key={cap.num} delay={i * 0.06}>
                   <div className="p-6 border-r border-b border-white/10 [&:nth-last-child(-n+2)]:border-b-0 [&:nth-last-child(-n+4)]:md:border-b-0 h-full">
-                    <p className="text-white/20 text-[16px] font-medium mb-3">
-                      {cap.num}
-                    </p>
                     <Icon className="w-5 h-5 text-white/60 mb-4" />
-                    <p className="text-white/70 text-[16px] font-semibold tracking-wider leading-tight">
+                    <p className="text-white/70 text-[18px] font-semibold tracking-wider leading-tight">
                       {cap.title}
                     </p>
                   </div>
@@ -207,10 +197,10 @@ export default function SoftwarePage() {
             <div className="border border-white/10 rounded-xl p-8 relative">
               <div className="flex items-start justify-between gap-6">
                 <div className="flex-1">
-                  <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-3">
+                  <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-3">
                     Operational Philosophy
                   </p>
-                  <p className="text-white text-[16px] leading-relaxed">
+                  <p className="text-white text-[18px] leading-relaxed">
                     <span className="font-semibold">
                       Our collaborative approach
                     </span>{" "}
@@ -242,16 +232,16 @@ export default function SoftwarePage() {
                 <div className="w-10 h-10 bg-[#0A1628] rounded-lg flex items-center justify-center mb-4">
                   <Brain className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
+                <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
                   Synthesis
                 </p>
                 <h3 className="text-[22px] font-bold text-[#1A1A2E] mb-1">
                   Generative AI
                 </h3>
-                <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-4">
+                <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-4">
                   Intelligence Layer
                 </p>
-                <p className="text-[#6B7280] text-[16px] leading-relaxed mb-5">
+                <p className="text-[#6B7280] text-[18px] leading-relaxed mb-5">
                   Content-generation systems and customer experience enhancers
                   that integrate into existing infrastructure.
                 </p>
@@ -259,7 +249,7 @@ export default function SoftwarePage() {
                   {["LLM", "FINE-TUNING", "VECTOR DB"].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 text-[#6B7280] text-[16px] font-semibold tracking-wider rounded-full"
+                      className="px-3 py-1 bg-gray-100 text-[#6B7280] text-[18px] font-semibold tracking-wider rounded-full"
                     >
                       {tag}
                     </span>
@@ -274,16 +264,16 @@ export default function SoftwarePage() {
                 <div className="w-10 h-10 bg-[#0A1628] rounded-lg flex items-center justify-center mb-4">
                   <Layers className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
+                <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-2">
                   Interface
                 </p>
                 <h3 className="text-[22px] font-bold text-[#1A1A2E] mb-1">
                   AI-Powered Apps
                 </h3>
-                <p className="text-[16px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-4">
+                <p className="text-[18px] font-semibold tracking-[0.15em] uppercase text-[#2563EB] mb-4">
                   Operational Layer
                 </p>
-                <p className="text-[#6B7280] text-[16px] leading-relaxed mb-5">
+                <p className="text-[#6B7280] text-[18px] leading-relaxed mb-5">
                   Intuitive web and mobile applications that leverage AI to
                   drive engagement and personalised experiences.
                 </p>
@@ -291,7 +281,7 @@ export default function SoftwarePage() {
                   {["FULL-STACK", "REAL-TIME", "UX/UI"].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 text-[#6B7280] text-[16px] font-semibold tracking-wider rounded-full"
+                      className="px-3 py-1 bg-gray-100 text-[#6B7280] text-[18px] font-semibold tracking-wider rounded-full"
                     >
                       {tag}
                     </span>
@@ -311,7 +301,7 @@ export default function SoftwarePage() {
               <SectionLabel text="Operational Use Cases" />
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.1} className="max-w-xs md:text-right">
-              <p className="text-[#6B7280] text-[16px] leading-relaxed">
+              <p className="text-[#6B7280] text-[18px] leading-relaxed">
                 Specific deployment scenarios where NeuralNet infrastructure
                 solves complex organisational challenges.
               </p>
@@ -331,13 +321,13 @@ export default function SoftwarePage() {
                     />
                   </div>
                   <div>
-                    <p className="text-[#2563EB] text-[16px] font-bold mb-1">
+                    <p className="text-[#2563EB] text-[18px] font-bold mb-1">
                       {uc.num}
                     </p>
-                    <h3 className="text-[#1A1A2E] font-bold text-[16px] mb-2">
+                    <h3 className="text-[#1A1A2E] font-bold text-[18px] mb-2">
                       {uc.title}
                     </h3>
-                    <p className="text-[#6B7280] text-[16px] leading-relaxed">
+                    <p className="text-[#6B7280] text-[18px] leading-relaxed">
                       {uc.desc}
                     </p>
                   </div>
@@ -368,7 +358,7 @@ export default function SoftwarePage() {
               </h2>
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.15}>
-              <p className="text-white/50 text-[16px] leading-relaxed mb-8">
+              <p className="text-white/50 text-[18px] leading-relaxed mb-8">
                 Tell us what your business challenges are. We&apos;ll tell you
                 what we&apos;d build.
               </p>
