@@ -638,16 +638,18 @@ export function ContactForm() {
 
       {/* reCAPTCHA */}
       <div>
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-          onChange={(token) => {
-            setRecaptchaToken(token);
-            if (token)
-              setErrors((p) => ({ ...p, recaptcha: undefined }));
-          }}
-          onExpired={() => setRecaptchaToken(null)}
-        />
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ? (
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            onChange={(token) => {
+              setRecaptchaToken(token);
+              if (token)
+                setErrors((p) => ({ ...p, recaptcha: undefined }));
+            }}
+            onExpired={() => setRecaptchaToken(null)}
+          />
+        ) : null}
         {errors.recaptcha && (
           <p className="text-red-500 text-[18px] mt-1">{errors.recaptcha}</p>
         )}
