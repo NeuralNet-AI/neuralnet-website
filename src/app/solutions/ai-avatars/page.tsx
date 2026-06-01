@@ -62,21 +62,23 @@ export default function AiAvatarsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-black overflow-hidden min-h-screen flex items-center">
-        {/* Full-width background image */}
+      <section className="relative min-h-screen flex items-end">
+        {/* Full-width background image — no gradients, straight photo */}
         <div className="absolute inset-0">
           <Image
-            src="/avatars-hero.png"
+            src="/avatar-hero-bg.png"
             alt="AI Avatar Solutions"
             fill
             className="object-cover"
+            style={{ objectPosition: "center center" }}
             priority
           />
-          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+          {/* Flat dark overlay for text legibility only */}
+          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-40 text-center">
+        {/* Content pushed to bottom */}
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 pb-20 pt-32 text-center">
           <AnimateOnScroll delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-[58px] font-black leading-[1.05] mb-6 text-white">
               YOUR BRAND.<br />A CONSISTENT PRESENCE.<br />DEPLOYED AT SCALE.

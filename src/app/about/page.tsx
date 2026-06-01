@@ -230,16 +230,6 @@ export default function AboutPage() {
 
           {/* 5-step timeline */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-6 left-[10%] right-[10%] h-px bg-[#E5E7EB] z-0">
-              <motion.div
-                initial={{ width: "0%" }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className="h-px bg-[#2563EB]"
-              />
-            </div>
             {methodology.map((step, i) => {
               const Icon = step.icon;
               return (
@@ -363,14 +353,16 @@ export default function AboutPage() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:via-black/40 transition-all duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      {/* Bio slides up on hover */}
-                      <div className="overflow-hidden mb-2">
-                        <p className="text-white/80 text-[13px] leading-relaxed translate-y-full group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                          {member.desc}
-                        </p>
-                      </div>
+                    {/* Base gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    {/* Hover overlay — covers full card, bio reads from top */}
+                    <div className="absolute inset-0 bg-[#0A1628]/88 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-start p-4 pt-4 overflow-hidden">
+                      <p className="text-white/80 text-[13px] leading-relaxed">
+                        {member.desc}
+                      </p>
+                    </div>
+                    {/* Name / title — hidden when bio overlay is active */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
                       <p className="text-white font-bold text-[15px] leading-tight">
                         {member.name}
                       </p>

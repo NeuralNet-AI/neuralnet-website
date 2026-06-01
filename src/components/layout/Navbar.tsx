@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/shared/Logo";
@@ -24,17 +24,58 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isLightBg, setIsLightBg] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   const isActiveSolutions = pathname.startsWith("/solutions");
 
+  const checkBg = useCallback(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const navBottom = nav.getBoundingClientRect().bottom;
+    const centerX = window.innerWidth / 2;
+
+    const elements = document.elementsFromPoint(centerX, navBottom + 2);
+    for (const el of elements) {
+      if (nav.contains(el) || el === nav) continue;
+      let node: Element | null = el;
+      while (node && node !== document.documentElement) {
+        const bg = window.getComputedStyle(node).backgroundColor;
+        if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+          const m = bg.match(/[\d.]+/g);
+          if (m && m.length >= 3) {
+            const lum = (0.299 * +m[0] + 0.587 * +m[1] + 0.114 * +m[2]) / 255;
+            setIsLightBg(lum > 0.5);
+          }
+          return;
+        }
+        node = node.parentElement;
+      }
+      break;
+    }
+  }, []);
+
+  useEffect(() => {
+    checkBg();
+    const onScroll = () => requestAnimationFrame(checkBg);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname, checkBg]);
+
+  const linkBase = "transition-colors duration-300";
+  const linkColor = isLightBg
+    ? "text-[#2563EB]/80 hover:text-[#2563EB]"
+    : "text-white/75 hover:text-white";
+  const activeColor = isLightBg ? "text-[#2563EB]" : "text-white";
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-white/10">
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-white/10">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
 
           <Link href="/" className="flex-shrink-0">
-            <Logo variant="dark" />
+            <Logo variant={isLightBg ? "light" : "dark"} />
           </Link>
 
           {/* Desktop nav */}
@@ -50,10 +91,8 @@ export function Navbar() {
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
                     <button
-                      className={`flex items-center gap-1 text-[18px] font-medium transition-colors duration-200 py-2 relative group ${
-                        isActiveSolutions
-                          ? "text-white"
-                          : "text-white/75 hover:text-white"
+                      className={`flex items-center gap-1 text-[18px] font-medium py-2 relative group ${linkBase} ${
+                        isActiveSolutions ? activeColor : linkColor
                       }`}
                     >
                       {link.label}
@@ -103,10 +142,8 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-[18px] font-medium transition-colors duration-200 py-2 group ${
-                    isActive
-                      ? "text-white"
-                      : "text-white/75 hover:text-white"
+                  className={`relative text-[18px] font-medium py-2 group ${linkBase} ${
+                    isActive ? activeColor : linkColor
                   }`}
                 >
                   {link.label}
@@ -122,7 +159,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-white"
+            className={`md:hidden p-2 transition-colors duration-300 ${isLightBg ? "text-[#2563EB]" : "text-white"}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -139,7 +176,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden bg-transparent backdrop-blur-sm border-t border-white/10 overflow-hidden"
+            className="md:hidden bg-white/90 backdrop-blur-md border-t border-white/20 overflow-hidden"
           >
             <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-1">
               {[

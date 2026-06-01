@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronDown, Search } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-/* â”€â”€â”€ Country data â”€â”€â”€ */
+/* â"€â"€â"€ Country data â"€â"€â"€ */
 interface Country {
   flag: string;
   name: string;
@@ -201,14 +201,14 @@ const COUNTRIES: Country[] = [
   { flag: "🇻🇺", name: "Vanuatu", dial: "+678" },
 ];
 
-/* â”€â”€â”€ Form types â”€â”€â”€ */
+/* â"€â"€â"€ Form types â"€â"€â"€ */
 const interests = [
   "How could I use AI to benefit my business",
   "I have a specific project or use case I would like to discuss",
   "How would an AI solution integrate and coexist within my existing environment safely",
   "I would like to understand how to build or enhance my AI Strategy",
-  "Manage & Ensure ROI from AI Project Lifecycles â€“ Should AI models be managed as an Asset?",
-  "Data Management Solutions â€“ Ensuring your Data is ready for AI",
+  "Manage & Ensure ROI from AI Project Lifecycles — Should AI models be managed as an Asset?",
+  "Data Management Solutions — Ensuring your Data is ready for AI",
   "AI Model Hosting Solutions",
   "AI Agents",
   "Full-Stack Cybersecurity Solutions (End-to-End Protection)",
@@ -237,7 +237,7 @@ interface Errors {
   recaptcha?: string;
 }
 
-/* â”€â”€â”€ Main component â”€â”€â”€ */
+/* â"€â"€â"€ Main component â"€â"€â"€ */
 export function ContactForm() {
   const [form, setForm] = useState<FormData>({
     firstName: "",
