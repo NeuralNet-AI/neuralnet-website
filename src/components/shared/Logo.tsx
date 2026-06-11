@@ -2,10 +2,9 @@ interface LogoProps {
   variant?: "light" | "dark";
   className?: string;
   tagline?: string;
-  taglineNoWrap?: boolean;
 }
 
-export function Logo({ variant = "light", className = "", tagline, taglineNoWrap }: LogoProps) {
+export function Logo({ variant = "light", className = "", tagline }: LogoProps) {
   const word = variant === "dark" ? "#FFFFFF"               : "#0F2F6B";
   const tag  = variant === "dark" ? "rgba(255,255,255,0.50)" : "#6B7280";
 
@@ -54,7 +53,6 @@ export function Logo({ variant = "light", className = "", tagline, taglineNoWrap
             letterSpacing: "0.04em",
             color: tag,
             marginTop: "5px",
-            whiteSpace: taglineNoWrap ? "nowrap" : undefined,
           }}
         >
           {tagline ?? "Business Problems . Engineered Outcomes"}

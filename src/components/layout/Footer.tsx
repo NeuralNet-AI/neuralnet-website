@@ -32,15 +32,14 @@ export function Footer() {
   return (
     <footer className="bg-[#0A1628] text-white">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Col 1: Logo */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+          {/* Col 1: Logo — spans 2 of 5 cols so tagline has room */}
+          <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Logo
-              variant="dark"
-              tagline="Business Problems. Engineered Outcomes"
-              taglineNoWrap
-            />
+                variant="dark"
+                tagline="Business Problems. Engineered Outcomes"
+              />
             </Link>
           </div>
 
