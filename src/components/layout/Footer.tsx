@@ -36,7 +36,11 @@ export function Footer() {
           {/* Col 1: Logo */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <Logo variant="dark" />
+              <Logo
+              variant="dark"
+              tagline="Business Problems. Engineered Outcomes"
+              taglineNoWrap
+            />
             </Link>
           </div>
 
