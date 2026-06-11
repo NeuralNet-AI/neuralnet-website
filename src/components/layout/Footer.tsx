@@ -129,6 +129,7 @@ export function Footer() {
           <p className="text-white/40 text-base">
             &copy; NeuralNet Ltd. All rights reserved. 2026
           </p>
+          {/* LINKS REMOVED TEMPORARILY — restore when ready:
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
@@ -144,6 +145,7 @@ export function Footer() {
               Quality Assurance Statement
             </Link>
           </div>
+          */}
         </div>
       </div>
     </footer>
