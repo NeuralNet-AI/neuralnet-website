@@ -34,7 +34,7 @@ export function Hero() {
               transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
               className="text-[38px] md:text-[50px] lg:text-[60px] font-bold leading-[1.07] text-white mb-7"
             >
-              Maximise your current IT value. Modernise with purpose.
+              Maximise your current IT value<br />Modernise with purpose.
             </motion.h1>
 
             <motion.p
