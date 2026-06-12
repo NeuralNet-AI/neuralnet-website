@@ -330,20 +330,21 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: "358819d2-9093-4c63-a658-aa31ecc209c1",
+          subject: "New Contact Form Submission - NeuralNet",
+          botcheck: "",
           name: `${form.firstName} ${form.lastName}`,
           email: form.email,
           phone: form.phone,
           company: form.company,
           message: form.challenge,
           interests: form.interests.join(", "),
-          "g-recaptcha-response": recaptchaToken,
         }),
       });
       const data = await res.json();
       if (data.success) {
         setSubmitted(true);
       } else {
-        setSubmitError("Something went wrong. Please try again.");
+        setSubmitError(data.message || "Something went wrong. Please try again.");
         recaptchaRef.current?.reset();
         setRecaptchaToken(null);
       }
