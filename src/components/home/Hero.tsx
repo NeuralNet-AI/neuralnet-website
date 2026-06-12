@@ -32,7 +32,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
-              className="text-[38px] md:text-[50px] lg:text-[60px] font-bold leading-[1.07] text-white mb-7"
+              className="text-[48px] md:text-[64px] lg:text-[80px] font-bold leading-[1.07] text-white mb-7"
             >
               Maximise your current IT value<br />Modernise with purpose.
             </motion.h1>
@@ -41,7 +41,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.32 }}
-              className="text-white/70 text-[18px] leading-[1.75] mb-10"
+              className="text-white text-[18px] leading-[1.75] mb-10"
             >
               We optimise what you already have, surface the data your business
               isn&apos;t using, and deploy intelligent automation precisely where
