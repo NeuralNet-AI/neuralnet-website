@@ -41,7 +41,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.32 }}
-              className="text-white text-[18px] leading-[1.75] mb-10"
+              className="text-white text-[16px] md:text-[18px] lg:text-[22px] leading-[1.75] mb-10"
             >
               We optimise what you already have, surface the data your business
               isn&apos;t using, and deploy intelligent automation precisely where
