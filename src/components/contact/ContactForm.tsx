@@ -250,6 +250,8 @@ export function ContactForm() {
   });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // reCAPTCHA
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -308,7 +310,7 @@ export function ContactForm() {
     return e;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -318,7 +320,40 @@ export function ContactForm() {
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
     }
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "358819d2-9093-4c63-a658-aa31ecc209c1",
+          name: `${form.firstName} ${form.lastName}`,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          message: form.challenge,
+          interests: form.interests.join(", "),
+          "g-recaptcha-response": recaptchaToken,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError("Something went wrong. Please try again.");
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
+      }
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleInterest = (interest: string) => {
@@ -655,13 +690,21 @@ export function ContactForm() {
         )}
       </div>
 
+      {/* Submit error */}
+      {submitError && (
+        <p className="text-red-500 text-[18px]">{submitError}</p>
+      )}
+
       {/* Submit */}
       <button
         type="submit"
-        className="w-full bg-[#0A1628] text-white py-5 rounded-lg text-[18px] font-semibold tracking-[0.08em] uppercase flex items-center justify-center gap-2 hover:bg-[#0d1f3c] transition-colors duration-200 group"
+        disabled={isSubmitting}
+        className="w-full bg-[#0A1628] text-white py-5 rounded-lg text-[18px] font-semibold tracking-[0.08em] uppercase flex items-center justify-center gap-2 hover:bg-[#0d1f3c] transition-colors duration-200 group disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Submit Request
-        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+        {isSubmitting ? "Submitting..." : "Submit Request"}
+        {!isSubmitting && (
+          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+        )}
       </button>
     </form>
   );
