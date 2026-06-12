@@ -48,7 +48,7 @@ export function SolutionsOverview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <AnimateOnScroll delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#1A1A2E] leading-[1.15] max-w-sm">
-              AI systems designed around your operations.
+              Systems built around the way your business works.
             </h2>
           </AnimateOnScroll>
           <AnimateOnScroll delay={0.2}>

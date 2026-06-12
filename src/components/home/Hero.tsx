@@ -32,18 +32,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
-              className="text-[38px] md:text-[50px] lg:text-[60px] font-bold leading-[1.07] text-white"
+              className="text-[38px] md:text-[50px] lg:text-[60px] font-bold leading-[1.07] text-white mb-7"
             >
-              Most organisations don&apos;t have an AI problem
-            </motion.h1>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: "easeOut", delay: 0.2 }}
-              className="text-[38px] md:text-[50px] lg:text-[60px] font-extrabold leading-[1.07] text-white mt-6 mb-7"
-            >
-              They have a business problem
+              Maximise your current IT value. Modernise with purpose.
             </motion.h1>
 
             <motion.p
@@ -52,8 +43,9 @@ export function Hero() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.32 }}
               className="text-white/70 text-[18px] leading-[1.75] mb-10"
             >
-              We build AI solutions that integrate, automate and scale
-              operations&mdash;delivering measurable outcomes
+              We optimise what you already have, surface the data your business
+              isn&apos;t using, and deploy intelligent automation precisely where
+              it drives results.
             </motion.p>
 
             <motion.div
